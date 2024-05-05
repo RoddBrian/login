@@ -1,12 +1,8 @@
 <?php
-// $user = getenv('DB_USER');
-// $password = getenv('DB_PASS');
-// $server = getenv('DB_HOST');
-// $database = getenv('DB_NAME');
-$user = 'root';
-$password = '4Doradas';
-$server = '127.0.0.1';
-$database = 'APP';
+$user = getenv('DB_USER');
+$password = getenv('DB_PASS');
+$server = getenv('DB_HOST');
+$database = getenv('DB_NAME');
 
 $conexion = new mysqli($server, $user, $password, $database);
 
