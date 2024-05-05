@@ -15,9 +15,6 @@ jobs:
         run: |
           sudo apt-get install -y php-cli php-mbstring php-xml php-fpm
 
-      - name: Build or prepare PHP project
-        # Add your project-specific build or preparation commands here
-
       - name: Deploy to Railway
         uses: bervProject/railway-deploy@main
         with:
