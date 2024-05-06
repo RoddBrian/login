@@ -2,21 +2,19 @@ name: Deploy to Railway
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Install PHP
-        run: |
-          sudo apt-get install -y php-cli php-mbstring php-xml php-fpm
-
-      - name: Deploy to Railway
-        uses: bervProject/railway-deploy@main
-        with:
-          railway_token: ${{ secrets.RAILWAY_TOKEN }}
-          service: login-production-9b0a.up
+    - name: Deploy to Railway
+      uses: bervProject/railway-deploy@main
+      with:
+        apiKey: ${{ secrets.RAILWAY_API_KEY }}
+        projectId: ${{ secrets.RAILWAY_PROJECT_ID }}
